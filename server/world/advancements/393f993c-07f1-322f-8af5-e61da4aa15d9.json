@@ -1,0 +1,10 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "beaches": "2021-11-02 23:23:30 -0600",
+      "savanna": "2021-11-02 23:23:18 -0600",
+      "savanna_rock": "2021-11-02 23:23:27 -0600"
+    },
+    "done": false
+  }
+}

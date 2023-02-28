@@ -1,0 +1,16 @@
+{
+  "minecraft:recipes/building_blocks/acacia_planks": {
+    "criteria": {
+      "has_log2": "2021-11-02 18:39:34 -0600"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "beaches": "2021-11-02 18:39:21 -0600",
+      "savanna": "2021-11-02 18:39:12 -0600",
+      "savanna_rock": "2021-11-02 18:39:22 -0600"
+    },
+    "done": false
+  }
+}

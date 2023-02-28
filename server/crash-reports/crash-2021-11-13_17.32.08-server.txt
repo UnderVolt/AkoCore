@@ -1,0 +1,60 @@
+---- Minecraft Crash Report ----
+// Ooh. Shiny.
+
+Time: 11/13/21 5:32 PM
+Description: Exception in server tick loop
+
+java.lang.NoClassDefFoundError: io/undervolt/cubecore/packets/RegisterSoundPacket
+	at io.undervolt.cubecore.proxy.ServerProxy.onJoin(ServerProxy.java:77)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_11_ServerProxy_onJoin_PlayerLoggedInEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:190)
+	at net.minecraftforge.fml.common.FMLCommonHandler.firePlayerLoggedIn(FMLCommonHandler.java:583)
+	at net.minecraft.server.management.PlayerList.initializeConnectionToPlayer(PlayerList.java:332)
+	at net.minecraftforge.fml.common.network.handshake.NetworkDispatcher.completeServerSideConnection(NetworkDispatcher.java:255)
+	at net.minecraftforge.fml.common.network.handshake.NetworkDispatcher.access$100(NetworkDispatcher.java:72)
+	at net.minecraftforge.fml.common.network.handshake.NetworkDispatcher$1.func_73660_a(NetworkDispatcher.java:205)
+	at net.minecraft.network.NetworkManager.func_74428_b(NetworkManager.java:296)
+	at net.minecraft.network.NetworkSystem.func_151269_c(NetworkSystem.java:193)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:1013)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:461)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:865)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:737)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: io.undervolt.cubecore.packets.RegisterSoundPacket
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:223)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 16 more
+Caused by: java.lang.NullPointerException
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Magma Version: 788465c-DEV
+	Operating System: Linux (amd64) version 5.15.2-arch1-1
+	Java Version: 1.8.0_212, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 346632032 bytes (330 MB) / 944766976 bytes (901 MB) up to 3722969088 bytes (3550 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 8, allocated: 20, tallocated: 86
+	FML: MCP 9.42 Powered by Forge 14.23.5.2855 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID        | Version      | Source           | Signature |
+	|:------ |:--------- |:------------ |:---------------- |:--------- |
+	| LCHIJA | minecraft | 1.12.2       | minecraft.jar    | None      |
+	| LCHIJA | mcp       | 9.42         | minecraft.jar    | None      |
+	| LCHIJA | FML       | 8.0.99.99    | magma.jar        | None      |
+	| LCHIJA | forge     | 14.23.5.2855 | magma.jar        | None      |
+	| LCHIJA | cubecore  | 1.0          | cubecore-1.0.jar | None      |
+
+	Loaded coremods (and transformers): 
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 20; [EntityPlayerMP['KiritoDev'/52, uuid='4bfee2e5-23ee-329e-8005-6017c43401ff', l='world', x=-3430.74, y=70.04, z=-2956.80, cx=-215, cd=-185, tl=625114, v=true, d=false](KiritoDev at -3430.7406037833703,70.04289683901332,-2956.797815706918)]
+	Is Modded: Definitely; Server brand changed to 'Magma'
+	Type: Dedicated Server (map_server.txt)

@@ -1,0 +1,92 @@
+---- Minecraft Crash Report ----
+// Why did you do that?
+
+Time: 11/13/21 1:57 PM
+Description: Ticking player
+
+java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to [Lnet.minecraft.util.math.Vec3d;
+	at io.undervolt.cubecore.handlers.WandRegionHandler.lambda$onMove$0(WandRegionHandler.java:35)
+	at java.util.HashMap.forEach(HashMap.java:1289)
+	at io.undervolt.cubecore.handlers.WandRegionHandler.onMove(WandRegionHandler.java:34)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_11_WandRegionHandler_onMove_LivingUpdateEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:190)
+	at net.minecraftforge.common.ForgeHooks.onLivingUpdate(ForgeHooks.java:535)
+	at net.minecraft.entity.EntityLivingBase.func_70071_h_(EntityLivingBase.java:2425)
+	at net.minecraft.entity.player.EntityPlayer.func_70071_h_(EntityPlayer.java:253)
+	at net.minecraft.entity.player.EntityPlayerMP.func_71127_g(EntityPlayerMP.java:482)
+	at net.minecraft.server.management.PlayerList.playerLoggedOut(PlayerList.java:566)
+	at net.minecraft.network.NetHandlerPlayServer.func_147231_a(NetHandlerPlayServer.java:1310)
+	at net.minecraft.network.NetworkManager.func_179293_l(NetworkManager.java:467)
+	at net.minecraft.network.NetworkSystem.func_151269_c(NetworkSystem.java:240)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:1013)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:461)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:865)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:737)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at io.undervolt.cubecore.handlers.WandRegionHandler.lambda$onMove$0(WandRegionHandler.java:35)
+	at java.util.HashMap.forEach(HashMap.java:1289)
+	at io.undervolt.cubecore.handlers.WandRegionHandler.onMove(WandRegionHandler.java:34)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_11_WandRegionHandler_onMove_LivingUpdateEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:190)
+	at net.minecraftforge.common.ForgeHooks.onLivingUpdate(ForgeHooks.java:535)
+	at net.minecraft.entity.EntityLivingBase.func_70071_h_(EntityLivingBase.java:2425)
+	at net.minecraft.entity.player.EntityPlayer.func_70071_h_(EntityPlayer.java:253)
+
+-- Player being ticked --
+Details:
+	Entity Type: null (net.minecraft.entity.player.EntityPlayerMP)
+	Entity ID: 36
+	Entity Name: KiritoDev
+	Entity's Exact location: -4759.34, 79.00, -2572.78
+	Entity's Block location: World: (-4760,79,-2573), Chunk: (at 8,4,3 in -298,-161; contains blocks -4768,0,-2576 to -4753,255,-2561), Region: (-10,-6; contains chunks -320,-192 to -289,-161, blocks -5120,0,-3072 to -4609,255,-2561)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.entity.player.EntityPlayerMP.func_71127_g(EntityPlayerMP.java:482)
+	at net.minecraft.server.management.PlayerList.playerLoggedOut(PlayerList.java:566)
+	at net.minecraft.network.NetHandlerPlayServer.func_147231_a(NetHandlerPlayServer.java:1310)
+	at net.minecraft.network.NetworkManager.func_179293_l(NetworkManager.java:467)
+	at net.minecraft.network.NetworkSystem.func_151269_c(NetworkSystem.java:240)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:1013)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:461)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:865)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:737)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Magma Version: 788465c-DEV
+	Operating System: Linux (amd64) version 5.15.2-arch1-1
+	Java Version: 1.8.0_212, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 990425384 bytes (944 MB) / 1293418496 bytes (1233 MB) up to 3722969088 bytes (3550 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.42 Powered by Forge 14.23.5.2855 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID        | Version      | Source           | Signature |
+	|:------ |:--------- |:------------ |:---------------- |:--------- |
+	| LCHIJA | minecraft | 1.12.2       | minecraft.jar    | None      |
+	| LCHIJA | mcp       | 9.42         | minecraft.jar    | None      |
+	| LCHIJA | FML       | 8.0.99.99    | magma.jar        | None      |
+	| LCHIJA | forge     | 14.23.5.2855 | magma.jar        | None      |
+	| LCHIJA | cubecore  | 1.0          | cubecore-1.0.jar | None      |
+
+	Loaded coremods (and transformers): 
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 20; [EntityPlayerMP['KiritoDev'/36, uuid='4bfee2e5-23ee-329e-8005-6017c43401ff', l='world', x=-4759.34, y=79.00, z=-2572.78, cx=-298, cd=-161, tl=550300, v=true, d=false](KiritoDev at -4759.340830520366,79.0,-2572.7832325799623)]
+	Is Modded: Definitely; Server brand changed to 'Magma'
+	Type: Dedicated Server (map_server.txt)
